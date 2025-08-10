@@ -109,11 +109,11 @@ export default function ClientFormDialog({ open, onClose, row }) {
     if (!/^\d{10}$/.test(form.telefono))
       errs.telefono = 'Debe contener 10 dígitos numéricos';
 
-    // CUIT: 1–11 dígitos numéricos
+    // CUIT: 11 dígitos numéricos
     if (!form.cuit.trim()) {
       errs.cuit = 'Requerido';
     } else if (!/^\d{11}$/.test(form.cuit)) {
-      errs.cuit = 'Sólo números (máx. 11 dígitos)';
+      errs.cuit = 'Debe contener 11 dígitos numéricos';
     }
 
     if (
@@ -199,10 +199,10 @@ export default function ClientFormDialog({ open, onClose, row }) {
               fullWidth
             />
 
-            {/* CUIT (1–11 dígitos) */}
+            {/* CUIT (11 dígitos) */}
             <TextField
               name="cuit"
-              label="CUIT"
+              label="CUIT (11 dígitos)"
               value={form.cuit}
               onChange={handleChange}
               inputProps={{
